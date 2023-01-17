@@ -80,7 +80,7 @@ python main.py --data_name Toys_and_Games --model_idx 0 --do_eval --encoder GRU
 On ML-1M:
 
 ```python
-python main.py --data_name ml-1m--model_idx 0 --do_eval --encoder SAS
+python main.py --data_name ml-1m --model_idx 0 --do_eval --encoder SAS
 ```
 
 ```
@@ -88,7 +88,7 @@ python main.py --data_name ml-1m--model_idx 0 --do_eval --encoder SAS
 ```
 
 ```
-python main.py --data_name ml-1m--model_idx 0 --do_eval --encoder GRU
+python main.py --data_name ml-1m --model_idx 0 --do_eval --encoder GRU
 ```
 
 ```

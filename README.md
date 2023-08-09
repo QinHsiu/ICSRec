@@ -7,6 +7,11 @@ This is our Pytorch implementation for the paper: "**Intent Contrastive Learning
 * Pytorch>=1.7.0
 * Python>=3.7 
 
+## Motvation 
+ ![avator](./pics/motivation.png)
+
+ 
+
 ## Model Overview
 
  ![avator](./pics/model.png)

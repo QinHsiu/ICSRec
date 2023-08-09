@@ -262,7 +262,7 @@ class ICSRecTrainer(Trainer):
                 logits = self.predict_full(intent_output[:, -1, :])  #  [Bx|I|]
                 rec_loss = nn.CrossEntropyLoss()(logits, target_pos_1[:, -1])
 
-                # ---------- intent contrastive task ---------------#
+                # ---------- intent representation learning task ---------------#
                 coarse_intent_1 = self.model(subsequence_1)
                 coarse_intent_2 = self.model(subsequence_2)
                 if self.args.cl_mode in ['c','cf']:

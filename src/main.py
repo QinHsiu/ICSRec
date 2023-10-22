@@ -93,7 +93,7 @@ def main():
 
     # construct supervisory signals via DS(·) operation
     if not os.path.exists(args.train_data_file):
-        DS(args.data_file,args.train_data_file)
+        DS(args.data_file,args.train_data_file,args.max_seq_length)
 
     # training data
     _,train_user_seq, _, _, _ = get_user_seqs(args.train_data_file)

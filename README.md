@@ -108,5 +108,27 @@ Please train the model using the Python script `main.py`.
 You can run the following command to train the model on Beauty datasets:
 
 ```
-python main.py --data_name Beauty --rec_weight 0.1 --lambda_0 0.1 --beta_0 0.1 --f_neg --intent_num 512 
+python main.py --data_name Beauty --rec_weight 1. --lambda_0 0.3 --beta_0 0.1 --f_neg --intent_num 256 
 ```
+or
+
+You can use the training scripts in the `scrips/{data_name}.sh` to train the model
+```angular2html
+bash beauty.sh
+bash ml-1m.sh
+bash sports.sh
+bash toys.sh
+```
+## Acknowledgment
+
+- Transformer and training pipeline are implemented based on [CoSeRec](https://github.com/salesforce/CoSeRec) and [ICLRec](https://github.com/salesforce/ICLRec). Thanks them for providing efficient implementation.
+
+
+## Citation
+
+```
+
+
+```
+- Please kindly cite our paper if this paper and the code are helpful. 
+

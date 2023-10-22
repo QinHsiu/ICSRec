@@ -201,7 +201,7 @@ class RecWithContrastiveLearningDataset(Dataset):
 
 
 # Dynamic Segmentation operations
-def DS(i_file,o_file):
+def DS_default(i_file,o_file):
     """
     :param i_file: original data
     :param o_file: output data
@@ -239,7 +239,48 @@ def DS(i_file,o_file):
 
 
 
-
+# Dynamic Segmentation operations
+def DS(i_file,o_file,max_len):
+    """
+    :param i_file: original data
+    :param o_file: output data
+    :max_len: the max length of the sequence
+    :return:
+    """
+    with open(i_file,"r+") as fr:
+        data=fr.readlines()
+    aug_d={}
+    # training, validation, and testing
+    max_save_len=max_len+3
+    # save
+    max_keep_len=max_len+2
+    for d_ in data:
+        u_i,item=d_.split(' ',1)
+        item=item.split(' ')
+        item[-1]=str(eval(item[-1]))
+        aug_d.setdefault(u_i, [])
+        start=0
+        j=3
+        if len(item)>max_save_len:
+            # training, validation, and testing
+            while start<len(item)-max_keep_len:
+                j=start+4
+                while j<len(item):
+                    if start<1 and j-start<max_save_len:
+                        aug_d[u_i].append(item[start:j])
+                        j+=1
+                    else:
+                        aug_d[u_i].append(item[start:start+max_save_len])
+                        break
+                start+=1
+        else:
+            while j<len(item):
+                aug_d[u_i].append(item[start:j+1])
+                j+=1
+    with open(o_file,"w+") as fw:
+        for u_i in aug_d:
+            for i_ in aug_d[u_i]:
+                fw.write(u_i+" "+' '.join(i_)+"\n")
 
 
 class SASRecDataset(Dataset):
@@ -333,10 +374,15 @@ class SASRecDataset(Dataset):
 
 
 if __name__ == "__main__":
-    DS("../data/Beauty.txt","../data/Beauty_1.txt")
+    # dynamic segmentation
+    DS("../data/Beauty.txt","../data/Beauty_1.txt",10)
+    # DS_default("../data/Beauty.txt", "../data/Beauty_1.txt")
+    # generate target item
     g=Generate_tag("../data","Beauty","../data")
+    # generate the dictionary
     data=g.get_data("../data/Beauty_1_t.pkl","train")
     i=0
+    # Only one sequence in the data dictionary in the training phase has the target item ID
     for d_ in data:
         if len(data[d_])<2:
             i+=1

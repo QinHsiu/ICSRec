@@ -112,7 +112,7 @@ python main.py --data_name Beauty --rec_weight 1. --lambda_0 0.3 --beta_0 0.1 --
 ```
 or
 
-You can use the training scripts in the `scrips/{data_name}.sh` to train the model
+You can use the training scripts in the `./src/scrips` folder to train the model 
 ```angular2html
 bash beauty.sh
 bash ml-1m.sh
@@ -127,7 +127,14 @@ bash toys.sh
 ## Citation
 
 ```
-
+@misc{qin2023intent,
+      title={Intent Contrastive Learning with Cross Subsequences for Sequential Recommendation}, 
+      author={Xiuyuan Qin and Huanhuan Yuan and Pengpeng Zhao and Guanfeng Liu and Fuzhen Zhuang and Victor S. Sheng},
+      year={2023},
+      eprint={2310.14318},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR}
+}
 
 ```
 - Please kindly cite our paper if this paper and the code are helpful. 

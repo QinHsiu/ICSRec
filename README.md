@@ -1,7 +1,8 @@
 # ICSRec
 
 This is our Pytorch implementation for the paper: "**Intent Contrastive Learning with Cross Subsequences for Sequential Recommendation**".
-
+- [paper](https://arxiv.org/pdf/2310.14318.pdf)
+- [note](https://juejin.cn/post/7298220509127458843)
 ## Environment  Requirement
 
 * Pytorch>=1.7.0

@@ -2,6 +2,7 @@
 
 This is our Pytorch implementation for the paper: "**Intent Contrastive Learning with Cross Subsequences for Sequential Recommendation**".
 - [paper](https://arxiv.org/pdf/2310.14318.pdf)
+- [video](https://www.bilibili.com/video/BV1Aw411g7xC/?vd_source=96ebb649d074a7680a8f9de2c1275ed6)
 - [note](https://juejin.cn/post/7298220509127458843)
 ## Environment  Requirement
 
